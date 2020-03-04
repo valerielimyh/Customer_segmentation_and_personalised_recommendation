@@ -12,22 +12,24 @@ Customer Lifetime Value (CLV) takes some of the mystery out of knowing how your 
 
 Project Organization
 ------------
-├── README.md          
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-│
-├── models            
-│
-├── notebooks          
-│                      
-├── references        
-├── reports           
-│   └── figures     
-│
-├── test-campaign   <- build flask app and deploy on Heroku
+
+    ├── README.md          
+    ├── data
+    │   ├── external       <- Data from third party sources.
+    │   ├── interim        <- Intermediate data that has been transformed.
+    │   ├── processed      <- The final, canonical data sets for modeling.
+    │   └── raw            <- The original, immutable data dump.
+    │
+    │
+    ├── models            
+    │
+    ├── notebooks          
+    │                      
+    ├── references        
+    ├── reports           
+    │   └── figures     
+    │
+    ├── test-campaign   <- build flask app and deploy on Heroku
+    │                     
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
