@@ -1,4 +1,4 @@
-Online personalised recommendations
+Personalised product recommendations
 ===================================
 
 The explosive growth of online content and services has provided a myriad of choices for users. For instance, on e-commerce websites or apps, users are provided an overwhelming volume of products than the amount that users can digest. Therefore, personalized online recommendation are necessary to improve user experience. The corollary of a pleasant user experience is augmented profits for businesses. 
