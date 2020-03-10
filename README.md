@@ -7,8 +7,7 @@ Before curating a set of products for different users, it is imperative to under
 
 Customer Lifetime Value (CLV) takes some of the mystery out of knowing how your current and future customers will behave. By calculating your CLV, you’ll be able to understand how often certain types of customers will make purchases and when those same customers will stop making purchases for good. The Recency-Frequency-Monetary Value (RFM) model is used to quantify CLV. Three buckets of customers were derived using clustering algorithm – high, mid and low-value customers. Collaborative filtering models were then developed for each bucket of customer using Spark’s Alternating Least Square. Collaborative filtering method is appropriate for existing users, because we have prior knowledge on their CLV. However, we do not know how to quantify the CLV for new users. Hence, a content-based model that recommends popular or trending products is created for them. 
 
-[This is an interim update of my project. Feel free to check back next week for the report :) Feel free to reach out with any questions]
-
+Find out how customer segmentation and personalised product recommendations can be a win-win strategy for users and businesses here. https://www.linkedin.com/pulse/personalised-product-recommendations-based-customer-lifetime-lim/?published=t. If you enjoyed it, hit the like button and applause button in the original post (https://medium.com/@valerielimyh/personalised-recommendations-based-on-customer-segmentation-and-e-commerce-product-ratings-6465b8877815), it would mean a lot to me and it would help others to see the story. Feel free to reach out by dropping me a LinkedIn message :) Cheers!
 
 Project Organization
 ------------
