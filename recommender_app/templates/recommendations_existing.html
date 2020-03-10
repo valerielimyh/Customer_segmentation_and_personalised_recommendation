@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<!-- Header -->
+<head>
+  <title>Product Category Recommender</title>
+</head>
+
+<!-- Body -->
+<body>
+  
+<div id='home' class="jumbotron text-center">
+  <h1> Product Category Recommendation</h1> 
+  <h2>I'm interested in these categories...</h2>
+  <h3><table><<form action="/recommendations_existing">
+          <td>
+          <label>Select :</label>
+            <select name="selected_categories" id = "selected_categories" width="300px">
+            {% for x in pdt_cat_names %} 
+            <selected_categories value= "{{x}}" SELECTED>{{ x }}</selected_categories>"
+            {% endfor %}
+            </select>
+          </td>
+</table></h3>
+
+  <p>Enter User Id</p>
+
+
+    <div class="input-group">
+      <fieldset>
+      <input name = "user" id = "user_id" type="number" class="form-control" size="50" placeholder="User Id" required>
+      <div class="input-group-btn">  
+      <input type="submit" value="Get Recommendations" method="get" class="btn btn-danger">
+        </fieldset>
+      </div>
+    </div>
+  </form>  
+</div>
+
+
+<!----------Recommendation Section----------->
+
+<div class="container-fluid">
+  <h2>USER : {{user_id}}</h2>
+  <h2>RECOMMENDED</h2>
+  
+ <!------Table---->  
+<div class="container">           
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">Product categories</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for y in existing_cust_recommendations %}
+        <br>
+        {{ y }}
+        <br>
+       {% endfor %}
+    </tbody>
+  </table>
+</div> 
+ {%endif%}  
+</div>  <!--Recommendation- end---->
+
+
+  
+</body>
+</html>

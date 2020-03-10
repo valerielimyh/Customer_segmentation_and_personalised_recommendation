@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Product Category Recommender</title>
+  
+  
+  
+      <link rel="stylesheet" href="static/style.css">
+
+  
+</head>
+
+<body>
+
+  <html lang="en">
+<head>
+  <title>Restaurant Menu</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-----Bootstrap CDN + jQuery----->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-----Google Fonts----->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Lato" rel="stylesheet" type="text/css">
+<!----Font Awesome----------->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">  
+
+  
+<body id="myPage" data-spy="scroll" data-trget=".navbar" data-offset="60">
+<!--------------NAVBAR------------>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="{{ url_for('main')}}">FooRonto</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#home">HOME</a></li>
+       <li><a href="#about">ABOUT</a></li>
+       {% if i %}
+        <li><a href="#hours">RECOMMENDATIONS</a></li>
+        {% endif %}
+        <li><a href="#footer">CONTACT</a></li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>  
+
+  
+<div id='home' class="jumbotron text-center">
+  <h1> Product Category Recommendation</h1> 
+  <h2>I'm interested in these categories...</h2>
+  <h3><table><<form action="/recommendations_existing" method="POST" class="form-inline">
+          <td>
+          <label>Select :</label>
+            <select name="selected_categories" id = "selected_categories" width="300px">
+            {% for x in pdt_cat_names %} 
+            <selected_categories value="{{ x }}"{% if loop.first %} SELECTED{% endif %}>{{ x }}</selected_categories>
+            {% endfor %}
+            </select>
+          </td>
+</table></h3>
+
+  <p>Enter User Id</p>
+
+
+    <div class="input-group">
+      <fieldset>
+      <input name = "user" id = "user_id" type="number" class="form-control" size="50" placeholder="User Id" required>
+      <div class="input-group-btn">  
+      <input type="submit" value="Get Recommendations" class="btn btn-danger">
+        </fieldset>
+      </div>
+    </div>
+  </form>  
+</div>
+
+
+<!----------Recommendation Section----------->
+ <div id="hours" class="container-fluid">
+  {% if r %}
+  <h2>USER : {{user_id}}</h2>
+  <h2>RECOMMENDED</h2>
+  
+ <!------Table---->  
+<div class="container">           
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">Product categories</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for y in existing_cust_recommendations %}
+        <br>
+        {{ y }}
+        <br>
+       {% endfor %}
+    </tbody>
+  </table>
+</div> 
+ {%endif%}  
+</div>  <!--Recommendation- end---->
+
+
+  
+</body>
+</html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style type="text/css">body {
+  font-family: 'Roboto', sans-serif;
+}
+
+footer {
+  background:#363b3f;
+  padding-bottom: 20px;
+ }
+
+footer p {
+  font-size:12px;
+  color:#fff;
+  text-align:center;
+  padding-top: 20px;
+}
+
+footer ul {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-left: 0px;
+}
+
+footer li {
+    display: inline-block;
+    margin: 4px;
+}
+
+footer li a {
+    display: block;
+    text-decoration: none;
+    border-bottom: medium none;
+    padding: 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in 0s, all 1s ease 0s;
+    background: #444749;
+}
+
+footer .facebook:hover {
+  background-color:#365397;
+}
+footer .twitter:hover {
+  background-color:#00a9f1;
+}
+footer .google-plus:hover {
+  background-color:#e0452c;
+}
+footer .youtube:hover {
+  background-color:#ff3333;
+}
+footer .flickr:hover {
+  background-color:#ea0066;
+}
+footer .dribbble:hover {
+  background-color:#ed4584;
+}
+footer .behance:hover {
+  background-color:#3fbff0;
+}
+footer .instagram:hover {
+  background-color:#396d9a;
+}
+footer .vimeo:hover {
+  background-color:#48b6ed;
+}
+footer .tumblr:hover {
+  background-color:#304c68;
+}
+footer .linkedin:hover {
+  background-color:#006db3;
+}
+footer .github:hover {
+  background-color:#2f2f2f;
+}</style>
+  </head>
+  <body>
+    <footer id = "footer"class="section">
+      <div class="container">
+       <p>bagaria.hb@gmail.com</p>
+        <ul>
+          <li><a target="_blank" class="facebook" href="https://www.facebook.com/himanshu.bagaria.92"><i class="fa fa-fw fa-2x fa-inverse fa-facebook"></i></a></li>
+          <li><a target="_blank" class="twitter" href="https://twitter.com/Himanshu4998"><i class="fa fa-fw fa-2x fa-inverse fa-twitter"></i></a></li>
+          
+          <li><a target="_blank" class="linkedin" href="https://www.linkedin.com/in/himanshu-bagaria-51770015b/"><i class="fa fa-fw fa-2x fa-inverse fa-linkedin"></i></a></li>
+          <li><a target="_blank" class="instagram" href="https://www.instagram.com/_hbagaria_"><i class="fa fa-fw fa-2x fa-inverse fa-instagram"></i></a></li>
+          
+          <li><a target="_blank" class="github" href="https://github.com/hbagaria4998"><i class="fa fa-fw fa-2x fa-inverse fa-github"></i></a></li>
+          
+        </ul>
+      </div>
+    </footer>
+
+  </body>
+</html>
+  
+ <script  src="static/script.js"></script>
+</body>
+
+</html>
